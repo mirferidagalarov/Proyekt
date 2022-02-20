@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MvCproyekt.Views.Charts
+namespace MvCproyekt.Views.Department
 {
     public class IndexModel : PageModel
     {

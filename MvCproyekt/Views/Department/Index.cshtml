@@ -1,0 +1,54 @@
+﻿@model List<DepartmentToListDTO>
+@{
+    Layout = "_MyLayout";
+}
+
+<link href="~/css/but.css" rel="stylesheet" />
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Department</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Department</li>
+        </ol>
+        <a asp-controller="Department" asp-action="AddDepartment" class="btn btn-primary">AddDepartment</a>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Data
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var department in Model)
+                        {
+                            <tr>
+                                <td>@department.DepartmentId</td>
+                                <td>@department.DepartmentName</td>
+                                <td>@Html.ActionLink("Update", "UpdateDepartment", "Department", new { id = department.DepartmentId }, new { @class = "btn btn-success" })</td>
+                                <td>@Html.ActionLink("Delete", "Delete", "Department", new { id = department.DepartmentId }, new { @class = "btn btn-danger" })</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

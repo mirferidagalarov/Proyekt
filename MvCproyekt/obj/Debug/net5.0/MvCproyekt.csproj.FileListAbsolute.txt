@@ -42,10 +42,6 @@ C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\MvCproyekt.csp
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Password\Index.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Register\Index.cshtml.g.cs
-C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Dashboard\Charts.cshtml.g.cs
-C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Dashboard\Tables.cshtml.g.cs
-C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Dashboard\StaticNavigation.cshtml.g.cs
-C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Dashboard\LightSidenav.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\Humanizer.dll
@@ -57,3 +53,7 @@ C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\Microsoft.Exte
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\Npgsql.dll
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Shared\_MyLayout.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Department\Index.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Department\AddDepartment.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Department\UpdateDepartment.cshtml.g.cs

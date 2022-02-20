@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MvCproyekt.Views.Dashboard
+namespace MvCproyekt.Views.Department
 {
-    public class StaticNavigationModel : PageModel
+    public class UpdateDepartmentModel : PageModel
     {
         public void OnGet()
         {

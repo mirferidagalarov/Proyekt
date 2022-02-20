@@ -15,6 +15,9 @@ namespace MvCproyekt.DAL.Core
             CreateMap<User, UserToListDTO>();
             CreateMap<UserToAddDTO, User>();
             CreateMap<UserToUpdateDTO, User>();
+            CreateMap<Department, DepartmentToListDTO>();
+            CreateMap<DepartmentToAddDTO, Department>();
+            CreateMap<DepartmentToUpdateDTO, Department>();
         }
     }
 }

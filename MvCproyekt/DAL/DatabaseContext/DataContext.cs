@@ -15,10 +15,12 @@ namespace MvCproyekt.DAL.DatabaseContext
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Department>  Departments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasQueryFilter(m => !m.IsDeleted);
+            modelBuilder.Entity<Department>().HasQueryFilter(m => !m.IsDeleted);
         }
 
     }

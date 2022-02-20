@@ -12,23 +12,8 @@ namespace MvCproyekt.Controllers
         {
             return View();
         }
-        public IActionResult Charts()
-        {
-            return View();
-        }
-        public IActionResult Tables()
-        {
-            return View();
-        }
-        public IActionResult StaticNavigation()
-        {
-            return View();
-        }
-        public IActionResult LightSidenav()
-        {
-            return View();
-        }
-
+      
+       
 
 
     }
