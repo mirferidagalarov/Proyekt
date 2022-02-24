@@ -9,7 +9,6 @@ C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\ref\MvCproyekt
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\MvCproyekt.pdb
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\MvCproyekt.Views.dll
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\bin\Debug\net5.0\MvCproyekt.Views.pdb
-C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\MvCproyekt.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\MvCproyekt.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\MvCproyekt.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\MvCproyekt.AssemblyInfo.cs
@@ -60,3 +59,4 @@ C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\De
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sector\Index.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sector\AddSector.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sector\UpdateSector.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\MvCproyekt.csproj.AssemblyReference.cache

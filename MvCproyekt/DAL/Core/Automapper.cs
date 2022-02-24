@@ -20,7 +20,9 @@ namespace MvCproyekt.DAL.Core
             CreateMap<DepartmentToUpdateDTO, Department>();
             CreateMap<Sector, SectorToListDTO>();
             CreateMap<SectorToAddDTO, Sector>();
-            CreateMap<SectorToUpdateDTO, Sector>();
+            CreateMap<SectorToUpdateDTO, Sector>().ReverseMap();
+
+
         }
     }
 }

@@ -11,9 +11,11 @@ namespace MvCproyekt.Controllers
     public class SectorController : Controller
     {
         private readonly ISectorService _sectorService;
-        public SectorController(ISectorService sectorService)
+        private readonly IDepartmentService _departmentService;
+        public SectorController(ISectorService sectorService, IDepartmentService departmentService)
         {
             _sectorService = sectorService;
+            _departmentService = departmentService;
         }
         public async Task<IActionResult> Index()
         {
@@ -21,28 +23,43 @@ namespace MvCproyekt.Controllers
             return View(sectors);
         }
 
-        public IActionResult AddSector()
+        public async Task<IActionResult> AddSector()
         {
-            return View();
+            List<DepartmentToListDTO> departmentToListDTOs = await _departmentService.Get();
+            SectorToAddDTO sectorToAddDTO = new SectorToAddDTO();
+            sectorToAddDTO.Departments = departmentToListDTOs;
+            return View(sectorToAddDTO);
         }
 
         public async Task<IActionResult> Add(SectorToAddDTO sectorToAddDTO)
         {
-            await _sectorService.Add(sectorToAddDTO);
-            return RedirectToAction("Index");
+            /*
+            if (!ModelState.IsValid)
+            {
+                return View("AddSector");
+            }
+            */
+            await _sectorService.Add(sectorToAddDTO);           
+            return RedirectToAction("Index");          
 
         }
 
         public async Task<IActionResult> UpdateSector(int id)
         {
+            List<DepartmentToListDTO> departmentToListDTOs = await _departmentService.Get();
             SectorToUpdateDTO sector = await _sectorService.GetId(id);
+            sector.Departments = departmentToListDTOs;          
             return View(sector);
-
-
         }
 
         public async Task<IActionResult> Update(SectorToUpdateDTO sectorToUpdateDTO)
         {
+            /*
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateSector");
+            }
+            */
             await _sectorService.Update(sectorToUpdateDTO);
             return RedirectToAction("Index");
 

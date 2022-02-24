@@ -18,8 +18,9 @@
                                         <span asp-validation-for="SectorName" style="color:red"></span>
                                         <label for="inputFirstName">SectorName</label>
                                     </div>
-                                    <div class="form-floating mb-3 mb-md-0">
-                                        <label for="department">Countries</label>
+                                    <div class="form-group">
+
+                                        <label for="department">DepartmentName</label>
                                         <select class="form-control" asp-for="DepartmentId" asp-items="(new @SelectList(Model.Departments,"DepartmentId","DepartmentName"))"></select>
                                         <span asp-validation-for="DepartmentId"></span>
                                     </div>

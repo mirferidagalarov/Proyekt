@@ -22,7 +22,7 @@ namespace MvCproyekt.BLL.Services
 
         public async Task Add(SectorToAddDTO sectorToAddDTO)
         {
-            Sector sector =  _mapper.Map<Sector>(sectorToAddDTO);
+            Sector sector = _mapper.Map<Sector>(sectorToAddDTO);
             await _sectorRepository.Add(sector);
         }
 
@@ -41,7 +41,6 @@ namespace MvCproyekt.BLL.Services
         {
             Sector sector = await _sectorRepository.GetId(sectorId);
             return _mapper.Map<SectorToUpdateDTO>(sector);
-
         }
 
         public async Task Update(SectorToUpdateDTO sectorToUpdateDTO)

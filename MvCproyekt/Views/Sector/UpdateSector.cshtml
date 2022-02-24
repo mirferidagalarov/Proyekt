@@ -1,4 +1,41 @@
-﻿@page
-@model MvCproyekt.Views.Sector.UpdateSectorModel
+﻿@model SectorToUpdateDTO
 @{
+    Layout = "_MyLayout";
 }
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Update Sector</h3></div>
+                    <div class="card-body">
+                        <form method="post" asp-controller="Sector" asp-action="Update">
+                            <div class="form-group">
+                                <label for="id"></label>
+                                <input asp-for="SectorId" type="text" hidden class="form-control" id="id" placeholder="enter username" />
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <div class="form-floating mb-3 mb-md-0">
+                                            <input asp-for="SectorName" type="text" class="form-control" id="sectorname" placeholder="enter sectorname" />
+                                            <span asp-validation-for="SectorName" style="color:red"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="department">DepartmentName</label>
+                                            <select class="form-control" asp-for="DepartmentId" asp-items="(new @SelectList(Model.Departments,"DepartmentId","DepartmentName"))"></select>
+                                            <span asp-validation-for="DepartmentId" style="color:red"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-0">
+                                <button type="submit" class="btn btn-success">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
