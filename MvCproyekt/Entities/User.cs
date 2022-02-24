@@ -12,9 +12,9 @@ namespace MvCproyekt.Entities
         public int UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        [Required(ErrorMessage = "Email does not database")]
+        [Required(ErrorMessage = "The email you've entered is incorrect")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Password does not database")]
+        [Required(ErrorMessage = "The email you've entered is incorrect")]
         public string Password { get; set; }
         public bool IsDeleted { get; set; }
     }

@@ -28,7 +28,7 @@ namespace MvCproyekt.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                  
+                   
                 }
 
                 return View("Index");

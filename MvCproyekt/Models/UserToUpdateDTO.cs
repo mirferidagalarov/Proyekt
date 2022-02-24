@@ -10,10 +10,8 @@ namespace MvCproyekt.Models
     {
         public int UserId { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }
-        [Required(ErrorMessage = "Email does not database")]
-        public string Email { get; set; }
-        [Required(ErrorMessage = "Password does not database")]
+        public string LastName { get; set; }    
+        public string Email { get; set; }     
         public string Password { get; set; }
     }
 }

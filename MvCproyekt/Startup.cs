@@ -43,6 +43,8 @@ namespace MvCproyekt
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<ISectorRepository, SectorRepository>();
+            services.AddScoped<ISectorService, SectorService>();
             services.AddAutoMapper(typeof(Automapper));
         }
 
@@ -70,7 +72,7 @@ namespace MvCproyekt
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Login}/{action=Index}/{id?}");
+                    pattern: "{controller=Sector}/{action=Index}/{id?}");
             });
         }
     }

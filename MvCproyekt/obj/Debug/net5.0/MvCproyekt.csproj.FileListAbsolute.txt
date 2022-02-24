@@ -57,3 +57,6 @@ C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sh
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Department\Index.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Department\AddDepartment.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Department\UpdateDepartment.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sector\Index.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sector\AddSector.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sector\UpdateSector.cshtml.g.cs

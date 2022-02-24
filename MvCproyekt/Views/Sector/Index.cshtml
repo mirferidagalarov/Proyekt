@@ -1,4 +1,4 @@
-﻿@model List<DepartmentToListDTO>
+﻿@model List<SectorToListDTO>
 @{
     Layout = "_MyLayout";
 }
@@ -7,11 +7,11 @@
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Department</h1>
+        <h1 class="mt-4">Sector</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Department</li>
+            <li class="breadcrumb-item active">Sector</li>
         </ol>
-        <a asp-controller="Department" asp-action="AddDepartment" class="btn btn-primary" >AddDepartment</a>
+        <a asp-controller="Sector" asp-action="AddSector" class="btn btn-primary">AddSector</a>
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
@@ -22,8 +22,9 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Name</th>
+                           
+                            <th>SectorName</th>
+                            <th>DepartmentName</th>
                             <th>Update</th>
                             <th>Delete</th>
 
@@ -31,21 +32,21 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Id</th>
-                            <th>Name</th>
+                            <th>SectorName</th>
+                            <th>DepartmentName</th>
                             <th>Update</th>
                             <th>Delete</th>
 
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach (var department in Model)
+                        @foreach (var sector in Model)
                         {
                             <tr>
-                                <td>@department.DepartmentId</td>
-                                <td>@department.DepartmentName</td>
-                                <td>@Html.ActionLink("Update", "UpdateDepartment", "Department", new { id = department.DepartmentId }, new { @class = "btn btn-success" })</td>
-                                <td>@Html.ActionLink("Delete", "Delete", "Department", new { id = department.DepartmentId }, new { @class = "btn btn-danger" })</td>
+                                <td>@sector.SectorName</td>
+                                <td>@sector.Department.DepartmentName</td>
+                                <td>@Html.ActionLink("Update", "UpdateSector", "Sector", new { id = sector.SectorId}, new { @class = "btn btn-success" })</td>
+                                <td>@Html.ActionLink("Delete", "Delete", "Sector", new { id = sector.SectorId }, new { @class = "btn btn-danger" })</td>
                             </tr>
                         }
 

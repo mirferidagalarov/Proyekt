@@ -27,17 +27,25 @@ namespace MvCproyekt.Controllers
 
         public async Task<IActionResult> Add(DepartmentToAddDTO departmentToAddDTO)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddDepartment");
+            }
             await _departmentService.Add(departmentToAddDTO);
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> UpdateDepartment(int id)
         {
-            DepartmentToListDTO department = await _departmentService.GetId(id);
+            DepartmentToUpdateDTO department = await _departmentService.GetId(id);
             return View(department);
         }
         public async Task<IActionResult> Update(DepartmentToUpdateDTO departmentToUpdateDTO)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateDepartment");
+            }
             await _departmentService.Update(departmentToUpdateDTO);
             return RedirectToAction("Index");
         }

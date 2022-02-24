@@ -22,6 +22,11 @@ namespace MvCproyekt.Controllers
 
         public async Task<IActionResult> CreatedUser(UserToAddDTO userToAddDTO)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
+           
             await _userService.Add(userToAddDTO);
             return RedirectToAction("Index","Login");
 

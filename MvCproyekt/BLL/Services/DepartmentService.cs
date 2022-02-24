@@ -37,10 +37,10 @@ namespace MvCproyekt.BLL.Services
             return _mapper.Map<List<DepartmentToListDTO>>(departments);
         }
 
-        public async Task<DepartmentToListDTO> GetId(int departmentId)
+        public async Task<DepartmentToUpdateDTO> GetId(int departmentId)
         {
             Department department = await _departmentRepository.GetId(departmentId);
-            return _mapper.Map<DepartmentToListDTO>(department);
+            return _mapper.Map<DepartmentToUpdateDTO>(department);
         }
 
         public async Task Update(DepartmentToUpdateDTO departmentToUpdateDTO)
