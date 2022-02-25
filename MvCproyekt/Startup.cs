@@ -72,7 +72,7 @@ namespace MvCproyekt
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Sector}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

@@ -2,7 +2,7 @@
 @{
     Layout = "_MyLayout";
 }
-
+   
 <link href="~/css/but.css" rel="stylesheet" />
 
 <main>
@@ -11,7 +11,10 @@
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Sector</li>
         </ol>
-        <a asp-controller="Sector" asp-action="AddSector" class="btn btn-primary">AddSector</a>
+
+        <div class="grid-button">
+            <a asp-controller="Sector" asp-action="AddSector" class="btn btn-primary">AddSector</a>
+        </div>
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
@@ -22,7 +25,7 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                           
+
                             <th>SectorName</th>
                             <th>DepartmentName</th>
                             <th>Update</th>
@@ -45,7 +48,7 @@
                             <tr>
                                 <td>@sector.SectorName</td>
                                 <td>@sector.Department.DepartmentName</td>
-                                <td>@Html.ActionLink("Update", "UpdateSector", "Sector", new { id = sector.SectorId}, new { @class = "btn btn-success" })</td>
+                                <td>@Html.ActionLink("Update", "UpdateSector", "Sector", new { id = sector.SectorId }, new { @class = "btn btn-success" })</td>
                                 <td>@Html.ActionLink("Delete", "Delete", "Sector", new { id = sector.SectorId }, new { @class = "btn btn-danger" })</td>
                             </tr>
                         }
