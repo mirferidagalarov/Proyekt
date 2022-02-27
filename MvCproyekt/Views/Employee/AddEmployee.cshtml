@@ -24,6 +24,11 @@
                                         <label for="inputFirstName">EmployeeSurname</label>
                                     </div>
                                     <div class="form-floating mb-3 mb-md-3">
+                                        <input asp-for="Salary" type="number" class="form-control" id="salary" placeholder="enter salary" />
+                                        <span asp-validation-for="Salary" style="color:red"></span>
+                                        <label for="inputFirstName">Salary</label>
+                                    </div>
+                                    <div class="form-floating mb-3 mb-md-3">
                                         <input asp-for="DateofBirth" type="date" class="form-control" id="dateofbirth" placeholder="enter employeesurname" />
                                         <span asp-validation-for="DateofBirth" style="color:red"></span>
                                         <label for="inputFirstName">DateofBirth</label>

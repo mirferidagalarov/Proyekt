@@ -12,6 +12,7 @@ namespace MvCproyekt.Models
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeSurname { get; set; }
+        public double Salary { get; set; }
         public DateTime DateofBirth { get; set; }
         public int DepartmentId { get; set; }
         public int SectorId { get; set; }
