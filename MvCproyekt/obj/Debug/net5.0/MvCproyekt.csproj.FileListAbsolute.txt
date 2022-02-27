@@ -60,3 +60,6 @@ C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Se
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sector\AddSector.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Sector\UpdateSector.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\MvCproyekt.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Employee\AddEmployee.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Employee\UpdateEmployee.cshtml.g.cs

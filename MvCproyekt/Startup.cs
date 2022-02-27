@@ -45,6 +45,10 @@ namespace MvCproyekt
             services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped<ISectorRepository, SectorRepository>();
             services.AddScoped<ISectorService, SectorService>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IPositionRepository, PositionRepository>();
+            services.AddScoped<IPositionService, PositionService>();
             services.AddAutoMapper(typeof(Automapper));
         }
 

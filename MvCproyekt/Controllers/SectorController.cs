@@ -19,7 +19,7 @@ namespace MvCproyekt.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<SectorToListDTO> sectors = await _sectorService.Get();
+            List<SectorToListDTO> sectors = await _sectorService.Get();                     
             return View(sectors);
         }
 
@@ -33,20 +33,22 @@ namespace MvCproyekt.Controllers
 
         public async Task<IActionResult> Add(SectorToAddDTO sectorToAddDTO)
         {
-            /*
+            
             if (!ModelState.IsValid)
             {
-                return View("AddSector");
+                List<DepartmentToListDTO> departmentToListDTOs = await _departmentService.Get();              
+                sectorToAddDTO.Departments = departmentToListDTOs;
+                return View("AddSector", sectorToAddDTO);
             }
-            */
-            await _sectorService.Add(sectorToAddDTO);           
+            
+            await _sectorService.Add(sectorToAddDTO);            
             return RedirectToAction("Index");          
 
         }
 
         public async Task<IActionResult> UpdateSector(int id)
         {
-            List<DepartmentToListDTO> departmentToListDTOs = await _departmentService.Get();
+            List<DepartmentToListDTO> departmentToListDTOs = await _departmentService.Get();            
             SectorToUpdateDTO sector = await _sectorService.GetId(id);
             sector.Departments = departmentToListDTOs;          
             return View(sector);
@@ -54,12 +56,15 @@ namespace MvCproyekt.Controllers
 
         public async Task<IActionResult> Update(SectorToUpdateDTO sectorToUpdateDTO)
         {
-            /*
+            
             if (!ModelState.IsValid)
             {
-                return View("UpdateSector");
+                List<DepartmentToListDTO> departmentToListDTOs = await _departmentService.Get();
+                SectorToUpdateDTO sector = await _sectorService.GetId(sectorToUpdateDTO.SectorId);
+                sector.Departments = departmentToListDTOs;
+                return View("UpdateSector", sector);
             }
-            */
+            
             await _sectorService.Update(sectorToUpdateDTO);
             return RedirectToAction("Index");
 

@@ -21,6 +21,10 @@ namespace MvCproyekt.DAL.Core
             CreateMap<Sector, SectorToListDTO>();
             CreateMap<SectorToAddDTO, Sector>();
             CreateMap<SectorToUpdateDTO, Sector>().ReverseMap();
+            CreateMap<Employee, EmployeeToListDTO>();
+            CreateMap<EmployeeToAddDTO, Employee>();
+            CreateMap<EmployeeToUpdateDTO, Employee>().ReverseMap();
+            CreateMap<Position, PositionToListDTO>();
 
 
         }

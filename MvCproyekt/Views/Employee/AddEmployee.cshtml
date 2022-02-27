@@ -1,0 +1,63 @@
+﻿@model EmployeeToAddDTO
+@{
+    Layout = "_MyLayout";
+}
+
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Add Employee</h3></div>
+                    <div class="card-body">
+                        <form method="post" asp-controller="Employee" asp-action="Add">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-3">
+                                        <input asp-for="EmployeeName" type="text" class="form-control" id="employeename" placeholder="enter employeename" />
+                                        <span asp-validation-for="EmployeeName" style="color:red"></span>
+                                        <label for="inputFirstName">EmployeeName</label>
+                                    </div>
+                                    <div class="form-floating mb-3 mb-md-3">
+                                        <input asp-for="EmployeeSurname" type="text" class="form-control" id="employeesurname" placeholder="enter employeesurname" />
+                                        <span asp-validation-for="EmployeeSurname" style="color:red"></span>
+                                        <label for="inputFirstName">EmployeeSurname</label>
+                                    </div>
+                                    <div class="form-floating mb-3 mb-md-3">
+                                        <input asp-for="DateofBirth" type="date" class="form-control" id="dateofbirth" placeholder="enter employeesurname" />
+                                        <span asp-validation-for="DateofBirth" style="color:red"></span>
+                                        <label for="inputFirstName">DateofBirth</label>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label for="department">DepartmentName</label>
+                                        <select class="form-control" asp-for="DepartmentId" asp-items="(new @SelectList(Model.Departments,"DepartmentId","DepartmentName"))"></select>
+
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label for="department">SectorName</label>
+                                        <select class="form-control" asp-for="SectorId" asp-items="(new @SelectList(Model.Sectors,"SectorId","SectorName"))"></select>
+
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label for="department">PositionName</label>
+                                        <select class="form-control" asp-for="PositionId" asp-items="(new @SelectList(Model.Positions,"PositionId","PositionName"))"></select>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-0">
+                                <button type="submit" class="btn btn-success">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
