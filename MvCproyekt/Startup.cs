@@ -49,6 +49,12 @@ namespace MvCproyekt
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IPositionRepository, PositionRepository>();
             services.AddScoped<IPositionService, PositionService>();
+            services.AddScoped<IMonthRepository, MonthRepository>();
+            services.AddScoped<IMonthService, MonthService>();
+            services.AddScoped<IYearRepository, YearRepository>();
+            services.AddScoped<IYearService, YearService>();
+            services.AddScoped<ISalaryRepository, SalaryRepository>();
+            services.AddScoped<ISalaryService, SalaryService>();
             services.AddAutoMapper(typeof(Automapper));
         }
 

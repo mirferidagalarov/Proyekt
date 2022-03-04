@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MvCproyekt.DAL.Core
 {
-    public class Automapper:Profile
+    public class Automapper : Profile
     {
         public Automapper()
         {
@@ -21,10 +21,15 @@ namespace MvCproyekt.DAL.Core
             CreateMap<Sector, SectorToListDTO>();
             CreateMap<SectorToAddDTO, Sector>();
             CreateMap<SectorToUpdateDTO, Sector>().ReverseMap();
-            CreateMap<Employee, EmployeeToListDTO>();
-            CreateMap<EmployeeToAddDTO, Employee>();
-            CreateMap<EmployeeToUpdateDTO, Employee>().ReverseMap();
+            CreateMap<Employee, EmployeeToListDTO>().ForMember(dest => dest.DateofBirth, opt => opt.MapFrom(src => src.DateofBirth.ToString("dd-MMM-yyyy")));
+            CreateMap<EmployeeToAddDTO, Employee>().ForMember(dest => dest.DateofBirth, opt => opt.MapFrom(src => Convert.ToDateTime(src.DateofBirth.ToString("dd-MMM-yyyy"))));
+            CreateMap<EmployeeToUpdateDTO, Employee>().ReverseMap().ForMember(dest => dest.DateofBirth, opt => opt.MapFrom(src => src.DateofBirth.ToString("dd-MMM-yyyy"))); ;
             CreateMap<Position, PositionToListDTO>();
+            CreateMap<Month, MonthToListDTO>();
+            CreateMap<Years, YearToListDTO>();
+            CreateMap<Salarys, SalaryToListDTO>();
+            CreateMap<SalaryToAddDTO, Salarys>();
+
 
 
         }

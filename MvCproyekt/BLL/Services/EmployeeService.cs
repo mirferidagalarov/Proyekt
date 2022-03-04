@@ -24,6 +24,7 @@ namespace MvCproyekt.BLL.Services
         {
             Employee employee = _mapper.Map<Employee>(employeeToAddDTO);
             await _employeeRepository.Add(employee);
+           
         }
 
         public async Task Delete(int employeeId)

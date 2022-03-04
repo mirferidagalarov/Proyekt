@@ -1,0 +1,50 @@
+﻿@model SalaryToAddDTO
+@{
+    Layout = "_MyLayout";
+}
+
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Add Salary</h3></div>
+                    <div class="card-body">
+                        <form method="post" asp-controller="Salary" asp-action="Add">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                   
+                                    <input asp-for="EmployeeId" hidden type="number" class="form-control" id="salary" placeholder="enter salary" />
+                                    <div class="form-floating mb-3 mb-md-3">
+                                        <input asp-for="Salary" type="number" class="form-control" id="salary" placeholder="enter salary" />
+                                        <span asp-validation-for="Salary" style="color:red"></span>
+                                        <label for="inputFirstName">Salary</label>
+                                    </div>
+                                  
+
+                                    <div class="form-group">
+
+                                        <label for="month">Month</label>
+                                        <select class="form-control" asp-for="MonthId" asp-items="(new @SelectList(Model.Month,"MonthId","MonthName"))"></select>
+
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label for="year">Year</label>
+                                        <select class="form-control" asp-for="YearId" asp-items="(new @SelectList(Model.Year,"YearId","Year"))"></select>
+
+                                    </div>
+                                   
+
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-0">
+                                <button type="submit" class="btn btn-success">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

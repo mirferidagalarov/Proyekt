@@ -79,6 +79,83 @@ namespace MvCproyekt.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("MvCproyekt.Entities.Month", b =>
+                {
+                    b.Property<int>("MonthId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("MonthName")
+                        .HasColumnType("text");
+
+                    b.HasKey("MonthId");
+
+                    b.ToTable("Months");
+
+                    b.HasData(
+                        new
+                        {
+                            MonthId = 1,
+                            MonthName = "Yanvar"
+                        },
+                        new
+                        {
+                            MonthId = 2,
+                            MonthName = "Fevral"
+                        },
+                        new
+                        {
+                            MonthId = 3,
+                            MonthName = "Mart"
+                        },
+                        new
+                        {
+                            MonthId = 4,
+                            MonthName = "Aprel"
+                        },
+                        new
+                        {
+                            MonthId = 5,
+                            MonthName = "May"
+                        },
+                        new
+                        {
+                            MonthId = 6,
+                            MonthName = "Iyun"
+                        },
+                        new
+                        {
+                            MonthId = 7,
+                            MonthName = "Iyul"
+                        },
+                        new
+                        {
+                            MonthId = 8,
+                            MonthName = "Avqust"
+                        },
+                        new
+                        {
+                            MonthId = 9,
+                            MonthName = "Sentaybr"
+                        },
+                        new
+                        {
+                            MonthId = 10,
+                            MonthName = "Oktyabr"
+                        },
+                        new
+                        {
+                            MonthId = 11,
+                            MonthName = "Noyabr"
+                        },
+                        new
+                        {
+                            MonthId = 12,
+                            MonthName = "Dekabr"
+                        });
+                });
+
             modelBuilder.Entity("MvCproyekt.Entities.Position", b =>
                 {
                     b.Property<int>("PositionId")
@@ -146,6 +223,39 @@ namespace MvCproyekt.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MvCproyekt.Entities.Salarys", b =>
+                {
+                    b.Property<int>("SalaryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("MonthId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Salary")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("YearId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("SalaryId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("MonthId");
+
+                    b.HasIndex("YearId");
+
+                    b.ToTable("Salariys");
+                });
+
             modelBuilder.Entity("MvCproyekt.Entities.Sector", b =>
                 {
                     b.Property<int>("SectorId")
@@ -198,6 +308,48 @@ namespace MvCproyekt.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("MvCproyekt.Entities.Years", b =>
+                {
+                    b.Property<int>("YearId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("Year")
+                        .HasColumnType("integer");
+
+                    b.HasKey("YearId");
+
+                    b.ToTable("Years");
+
+                    b.HasData(
+                        new
+                        {
+                            YearId = 1,
+                            Year = 2020
+                        },
+                        new
+                        {
+                            YearId = 2,
+                            Year = 2021
+                        },
+                        new
+                        {
+                            YearId = 3,
+                            Year = 2022
+                        },
+                        new
+                        {
+                            YearId = 4,
+                            Year = 2023
+                        },
+                        new
+                        {
+                            YearId = 5,
+                            Year = 2024
+                        });
+                });
+
             modelBuilder.Entity("MvCproyekt.Entities.Employee", b =>
                 {
                     b.HasOne("MvCproyekt.Entities.Department", "Department")
@@ -223,6 +375,33 @@ namespace MvCproyekt.Migrations
                     b.Navigation("Position");
 
                     b.Navigation("Sector");
+                });
+
+            modelBuilder.Entity("MvCproyekt.Entities.Salarys", b =>
+                {
+                    b.HasOne("MvCproyekt.Entities.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MvCproyekt.Entities.Month", "Month")
+                        .WithMany()
+                        .HasForeignKey("MonthId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MvCproyekt.Entities.Years", "Year")
+                        .WithMany()
+                        .HasForeignKey("YearId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Month");
+
+                    b.Navigation("Year");
                 });
 
             modelBuilder.Entity("MvCproyekt.Entities.Sector", b =>

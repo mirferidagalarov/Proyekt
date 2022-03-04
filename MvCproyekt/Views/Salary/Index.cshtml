@@ -1,0 +1,63 @@
+﻿@model List<SalaryToListDTO>
+@{
+    Layout = "_MyLayout";
+}
+<link href="~/css/but.css" rel="stylesheet" />
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Salary</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Salary</li>
+        </ol>
+
+        <div class="grid-button">
+             @Html.ActionLink("Add", "AddSalary", "Salary", new { id = ViewBag.EmpId }, new { @class = "btn btn-success" })
+        </div>
+       
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Salary
+            </div>
+
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>EmployeeName</th>
+                            <th>Salary</th>
+                            <th>Month</th>
+                            <th>Year</th>
+
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>EmployeeName</th>
+                            <th>Salary</th>
+                            <th>Month</th>
+                            <th>Year</th>
+
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var salary in Model)
+                        {
+                        <tr>
+                            <td>@salary.Employee.EmployeeName</td>
+                            <td>@salary.Salary</td>
+                            <td>@salary.Month.MonthName</td>
+                            <td>@salary.Year.Year</td>
+
+
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</main>

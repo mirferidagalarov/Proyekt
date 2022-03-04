@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MvCproyekt.BLL.Services.IServices;
+using MvCproyekt.DAL.DatabaseContext;
 using MvCproyekt.Entities;
 using MvCproyekt.Models;
 using System;
@@ -15,12 +16,14 @@ namespace MvCproyekt.Controllers
         private readonly IDepartmentService _departmentService;
         private readonly ISectorService _sectorService;
         private readonly IPositionService _positionService;
+
         public EmployeeController(IEmployeeService employeeService, IDepartmentService departmentService, ISectorService sectorService, IPositionService positionService)
         {
             _employeeService = employeeService;
             _departmentService = departmentService;
             _sectorService = sectorService;
             _positionService = positionService;
+           
         }
         public async Task<IActionResult> Index()
         {
@@ -92,7 +95,7 @@ namespace MvCproyekt.Controllers
         }
 
 
-
+      
 
     }
 }
