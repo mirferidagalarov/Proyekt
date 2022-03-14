@@ -1,4 +1,5 @@
-﻿using MvCproyekt.Entities;
+﻿using Microsoft.AspNetCore.Http;
+using MvCproyekt.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,6 +13,7 @@ namespace MvCproyekt.Models
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeSurname { get; set; }
+        public string ImagePath { get; set; }
         public double Salary { get; set; }
         public string DateofBirth { get; set; }
         public int DepartmentId { get; set; }

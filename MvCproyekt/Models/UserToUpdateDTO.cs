@@ -10,8 +10,12 @@ namespace MvCproyekt.Models
     {
         public int UserId { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }    
-        public string Email { get; set; }     
+        public string LastName { get; set; }
+        [Required(ErrorMessage = "Enter Email")]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Enter password")]
         public string Password { get; set; }
+        [Required(ErrorMessage = "Enter confirmpassword")]
+        public string ConfirmPassword { get; set; }
     }
 }

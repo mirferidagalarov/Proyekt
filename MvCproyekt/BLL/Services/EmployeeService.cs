@@ -20,10 +20,12 @@ namespace MvCproyekt.BLL.Services
             _mapper = mapper;
         }
 
-        public async Task Add(EmployeeToAddDTO employeeToAddDTO)
+        public async Task Add(EmployeeToAddDTO employeeToAddDTO,string filename)
         {
             Employee employee = _mapper.Map<Employee>(employeeToAddDTO);
+            employee.ImagePath = filename;
             await _employeeRepository.Add(employee);
+
            
         }
 

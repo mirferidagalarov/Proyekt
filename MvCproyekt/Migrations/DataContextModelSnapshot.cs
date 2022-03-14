@@ -19,6 +19,21 @@ namespace MvCproyekt.Migrations
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+            modelBuilder.Entity("MvCproyekt.Entities.Chart", b =>
+                {
+                    b.Property<int>("Stock")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Proname")
+                        .HasColumnType("text");
+
+                    b.HasKey("Stock");
+
+                    b.ToTable("Charts");
+                });
+
             modelBuilder.Entity("MvCproyekt.Entities.Department", b =>
                 {
                     b.Property<int>("DepartmentId")
@@ -31,6 +46,9 @@ namespace MvCproyekt.Migrations
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("StockAmount")
+                        .HasColumnType("integer");
 
                     b.HasKey("DepartmentId");
 
@@ -54,6 +72,9 @@ namespace MvCproyekt.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("EmployeeSurname")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImagePath")
                         .HasColumnType("text");
 
                     b.Property<bool>("IsDeleted")
@@ -285,6 +306,9 @@ namespace MvCproyekt.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("ConfirmPassword")
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
                         .IsRequired()

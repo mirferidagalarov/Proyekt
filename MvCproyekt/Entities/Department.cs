@@ -11,6 +11,7 @@ namespace MvCproyekt.Entities
         [Key]
         public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
+        public int StockAmount { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

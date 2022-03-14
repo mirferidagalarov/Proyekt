@@ -1,5 +1,4 @@
-﻿@page
-@model MvCproyekt.Views.Password.IndexModel
+﻿@model UserToUpdateDTO
 @{
     Layout = null;
 }
@@ -26,16 +25,31 @@
                                 <div class="card-header"><h3 class="text-center font-weight-light my-4">Password Recovery</h3></div>
                                 <div class="card-body">
                                     <div class="small mb-3 text-muted">Enter your email address and we will send you a link to reset your password.</div>
-                                    <form>
+                                    <form method="post" asp-controller="Password" asp-action="PasswordUpdate">
+                                        <div class="form-group">
+                                            <label for="id"></label>
+                                            <input asp-for="UserId" type="text" hidden class="form-control" id="id" placeholder="enter username" />
+                                        </div>
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                            <input asp-for="Email" class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
                                             <label for="inputEmail">Email address</label>
+                                            <span asp-validation-for="Email" style="color:red"></span>
+                                        </div>
+                                        <div class="form-floating mb-3 mb-md-0">
+                                            <input asp-for="Password" class="form-control" id="inputPassword" type="password" placeholder="Create a password" />
+                                            <label for="inputPassword">Password</label>
+                                            <span asp-validation-for="Password" style="color:red"></span>
+                                        </div>
+                                        <div class="form-floating mb-3 mb-md-0">
+                                            <input asp-for="ConfirmPassword" class="form-control" id="confirmpassword" type="password" placeholder="Create a password" />
+                                            <label for="inputPassword">ConfirmPassword</label>
+                                            <span asp-validation-for="ConfirmPassword" style="color:red"></span>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <a class="small" href="~/Login/Index/login.html">Return to login</a>
-                                            <a class="btn btn-primary" href="login.html">Reset Password</a>
+                                            <button type="submit" class="btn btn-success">Reset Password</button>
                                         </div>
-                                    </form>
+                                    </form> 
                                 </div>
                                 <div class="card-footer text-center py-3">
                                     <div class="small"><a href="~/Register/Index/register.html">Need an account? Sign up!</a></div>

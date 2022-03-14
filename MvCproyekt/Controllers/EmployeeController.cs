@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using MvCproyekt.BLL.Services.IServices;
 using MvCproyekt.DAL.DatabaseContext;
 using MvCproyekt.Entities;
 using MvCproyekt.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace MvCproyekt.Controllers
 {
     public class EmployeeController : Controller
@@ -16,13 +17,17 @@ namespace MvCproyekt.Controllers
         private readonly IDepartmentService _departmentService;
         private readonly ISectorService _sectorService;
         private readonly IPositionService _positionService;
+        private readonly IWebHostEnvironment _env;
+        private readonly DataContext _dataContext;
 
-        public EmployeeController(IEmployeeService employeeService, IDepartmentService departmentService, ISectorService sectorService, IPositionService positionService)
+        public EmployeeController(IEmployeeService employeeService, IDepartmentService departmentService, ISectorService sectorService, IPositionService positionService, IWebHostEnvironment webHostEnvironment, DataContext dataContext)
         {
             _employeeService = employeeService;
             _departmentService = departmentService;
             _sectorService = sectorService;
             _positionService = positionService;
+            _env = webHostEnvironment;
+            _dataContext = dataContext;
            
         }
         public async Task<IActionResult> Index()
@@ -43,6 +48,7 @@ namespace MvCproyekt.Controllers
             employeeToAddDTO.Sectors = sectorToListDTOs;            
             return View(employeeToAddDTO);
         }
+       
 
         public async Task<IActionResult> Add(EmployeeToAddDTO employeeToAddDTO)
         {
@@ -56,12 +62,25 @@ namespace MvCproyekt.Controllers
                 employeeToAddDTO.Sectors = sectorToListDTOs;
                 return View("AddEmployee", employeeToAddDTO);
             }
-            await _employeeService.Add(employeeToAddDTO);
+            string fileName = Guid.NewGuid().ToString() + "_" + employeeToAddDTO.ImagePath.FileName; ;
+            if (employeeToAddDTO.ImagePath !=null)
+            {
+                string folder = "Image/";             
+                folder += fileName;
+                string serverFolder = Path.Combine(_env.WebRootPath, folder);
+                await employeeToAddDTO.ImagePath.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+
+            }
+          
+            await _employeeService.Add(employeeToAddDTO, fileName);
             return RedirectToAction("Index");
+           
         }
+
 
         public async Task<IActionResult> UpdateEmployee(int id)
         {
+           
             List<DepartmentToListDTO> departmentToListDTOs = await _departmentService.Get();
             List<SectorToListDTO> sectorToListDTOs = await _sectorService.Get();
             List<PositionToListDTO> positionToListDTOs = await _positionService.Get();
@@ -69,6 +88,7 @@ namespace MvCproyekt.Controllers
             employee.Departments = departmentToListDTOs;
             employee.Sectors = sectorToListDTOs;
             employee.Positions = positionToListDTOs;
+            
             return View(employee);
         }
 

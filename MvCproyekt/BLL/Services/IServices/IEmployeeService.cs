@@ -10,7 +10,7 @@ namespace MvCproyekt.BLL.Services.IServices
     {
         Task<List<EmployeeToListDTO>> Get();
         Task<EmployeeToUpdateDTO> GetId(int employeeId);
-        Task Add(EmployeeToAddDTO employeeToAddDTO);
+        Task Add(EmployeeToAddDTO employeeToAddDTO,string filename);
         Task Update(EmployeeToUpdateDTO employeeToUpdateDTO);
         Task Delete(int employeeId);
        

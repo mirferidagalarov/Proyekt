@@ -23,7 +23,7 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-
+                            <th>Image</th>
                             <th>EmployeeName</th>
                             <th>EmployeeSurname</th>
                             <th>Salary</th>
@@ -39,6 +39,7 @@
                     </thead>
                     <tfoot>
                         <tr>
+                            <th>Image</th>
                             <th>EmployeeName</th>
                             <th>EmployeeSurname</th>
                             <th>Salary</th>
@@ -53,20 +54,23 @@
                         </tr>
                     </tfoot>
                     <tbody>
+                   
                         @foreach (var employee in Model)
                         {
-                        <tr>
-                            <td>@employee.EmployeeName</td>
-                            <td>@employee.EmployeeSurname</td>
-                            <td>@employee.Salary</td>
-                            <td>@employee.DateofBirth</td>
-                            <td>@employee.Department.DepartmentName</td>
-                            <td>@employee.Sector.SectorName</td>
-                            <td>@employee.Position.PositionName</td>
-                            <td>@Html.ActionLink("Update", "UpdateEmployee", "Employee", new { id = employee.EmployeeId }, new { @class = "btn btn-primary" })</td>
-                            <td>@Html.ActionLink("Delete", "Delete", "Employee", new { id = employee.EmployeeId }, new { @class = "btn btn-danger" })</td>
-                            <td>@Html.ActionLink("Salary", "Index", "Salary", new { id =employee.EmployeeId }, new { @class = "btn btn-success" })</td>
-                        </tr>
+                      
+                            <tr>
+                                <td> <img src="@("~/Image/"+employee.ImagePath)" asp-append-version="true" width="50px" height="50px" /></td>
+                                <td>@employee.EmployeeName</td>
+                                <td>@employee.EmployeeSurname</td>
+                                <td>@employee.Salary</td>
+                                <td>@employee.DateofBirth</td>
+                                <td>@employee.Department.DepartmentName</td>
+                                <td>@employee.Sector.SectorName</td>
+                                <td>@employee.Position.PositionName</td>
+                                <td>@Html.ActionLink("Update", "UpdateEmployee", "Employee", new { id = employee.EmployeeId }, new { @class = "btn btn-primary" })</td>
+                                <td>@Html.ActionLink("Delete", "Delete", "Employee", new { id = employee.EmployeeId }, new { @class = "btn btn-danger" })</td>
+                                <td>@Html.ActionLink("Salary", "Index", "Salary", new { id = employee.EmployeeId }, new { @class = "btn btn-success" })</td>
+                            </tr>
                         }
 
                     </tbody>

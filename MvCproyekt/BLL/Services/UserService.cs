@@ -44,7 +44,7 @@ namespace MvCproyekt.BLL.Services
             return _mapper.Map<UserToListDTO>(user);
         }
 
-        public async Task Update(UserToUpdateDTO userToUpdateDTO)
+        public async Task Update(User userToUpdateDTO)
         {
             User user = _mapper.Map<User>(userToUpdateDTO);
            await _userRepository.Update(user);

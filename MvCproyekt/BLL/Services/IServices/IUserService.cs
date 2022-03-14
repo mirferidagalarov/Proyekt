@@ -1,4 +1,5 @@
-﻿using MvCproyekt.Models;
+﻿using MvCproyekt.Entities;
+using MvCproyekt.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace MvCproyekt.BLL.Services.IServices
         Task<List<UserToListDTO>> Get();
         Task<UserToListDTO> GetId(int userId);
         Task Add(UserToAddDTO userToAddDTO);
-        Task Update(UserToUpdateDTO userToUpdateDTO);
+        Task Update(User yoxla);
         Task Delete(int userId);
     }
 }

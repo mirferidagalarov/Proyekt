@@ -64,4 +64,5 @@ C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Em
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Employee\UpdateEmployee.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Salary\Index.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Salary\AddSalary.cshtml.g.cs
+C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\Razor\Views\Chart\Index.cshtml.g.cs
 C:\Users\User\source\repos\MvCproyekt\MvCproyekt\obj\Debug\net5.0\MvCproyekt.csproj.AssemblyReference.cache

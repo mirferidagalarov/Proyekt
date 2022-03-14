@@ -16,6 +16,7 @@ namespace MvCproyekt.Entities
         public string Email { get; set; }
         [Required(ErrorMessage = "The email you've entered is incorrect")]
         public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

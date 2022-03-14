@@ -19,6 +19,7 @@ namespace MvCproyekt.DAL.Repositories
 
         public async Task Add(Employee employee)
         {
+          
            await _dataContext.Employees.AddAsync(employee);
             await _dataContext.SaveChangesAsync();
         }
