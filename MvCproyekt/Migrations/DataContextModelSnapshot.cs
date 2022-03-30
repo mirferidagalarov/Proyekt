@@ -21,15 +21,18 @@ namespace MvCproyekt.Migrations
 
             modelBuilder.Entity("MvCproyekt.Entities.Chart", b =>
                 {
-                    b.Property<int>("Stock")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Proname")
+                    b.Property<int>("count")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("proname")
                         .HasColumnType("text");
 
-                    b.HasKey("Stock");
+                    b.HasKey("Id");
 
                     b.ToTable("Charts");
                 });
@@ -46,9 +49,6 @@ namespace MvCproyekt.Migrations
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
-
-                    b.Property<int>("StockAmount")
-                        .HasColumnType("integer");
 
                     b.HasKey("DepartmentId");
 

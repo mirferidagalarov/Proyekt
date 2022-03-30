@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Chart\Pie.cshtml" />
+    <None Include="Views\Pie\Index.cshtml" />
   </ItemGroup>
 
 </Project>

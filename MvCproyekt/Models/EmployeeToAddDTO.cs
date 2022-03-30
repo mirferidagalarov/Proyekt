@@ -13,9 +13,9 @@ namespace MvCproyekt.Models
         [Required(ErrorMessage = "Enter EmployeeName")]
         public string EmployeeName { get; set; }
         [Required(ErrorMessage = "Enter EmployeeSurname")]
-        public string EmployeeSurname { get; set; }
-        [Required(ErrorMessage = "Enter Salary")]
+        public string EmployeeSurname { get; set; }     
         public IFormFile ImagePath { get; set; }
+        [Required(ErrorMessage = "Enter Salary")]
         public double Salary { get; set; }
         public DateTime DateofBirth { get; set; }
         public List<DepartmentToListDTO> Departments { get; set; }        

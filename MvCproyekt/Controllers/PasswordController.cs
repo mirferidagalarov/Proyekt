@@ -26,10 +26,7 @@ namespace MvCproyekt.Controllers
  
         public async Task<IActionResult> PasswordUpdate(UserToUpdateDTO userToUpdateDTO)
         {
-            if (!ModelState.IsValid)
-            {
-                return View("Index");
-            }
+            
             var yoxla = _dataContext.Users.SingleOrDefault(m => m.Email == userToUpdateDTO.Email);
             if (yoxla!=null)
             {
@@ -40,7 +37,11 @@ namespace MvCproyekt.Controllers
                     return RedirectToAction("Index", "Login");
                 }
             }
-            
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
+
             return View();
 
         }

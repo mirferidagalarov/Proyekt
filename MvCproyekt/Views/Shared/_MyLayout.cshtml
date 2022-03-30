@@ -19,98 +19,6 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-
-            $.ajax({
-
-                type: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                url: '@Url.Action("VisualizeProductList", "Chart")',
-                success: function (result) {
-                    google.charts.load('current', {
-
-                        'packages': ['corechart']
-                    });
-                    google.charts.setOnLoadCallback(function () {
-
-                        drawChart(result);
-
-                    });
-
-                }
-            });
-
-        });
-        function drawChart(result) {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'DepartmentName');
-            data.addColumn('number', 'StockAmount');
-            var dataArray = [];
-            $.each(result, function (i, obj) {
-                dataArray.push([obj.proname, obj.stock]);
-
-            });
-            data.addRows(dataArray);
-            var columnChartOptions = {
-                title: "Column",
-                width: 1000,
-                height: 750,
-                bar: { groupWidth:"20%"},
-            };
-            var columnChart = new
-                google.visualization.ColumnChart(document
-                    .getElementById('Column_div'));
-            columnChart.draw(data, columnChartOptions);
-        }
-    </script>
-    @*<script>
-        $(document).ready(function () {
-
-            $.ajax({
-
-                type: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                url: '@Url.Action("VisualizeProductList1", "Chart")',
-                success: function (result) {
-                    google.charts.load('current', {
-
-                        'packages': ['corechart']
-                    });
-                    google.charts.setOnLoadCallback(function () {
-
-                        drawChart(result);
-
-                    });
-
-                }
-            });
-
-        });
-        function drawChart(result) {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'DepartmentName');
-            data.addColumn('number', 'StockAmount');
-            var dataArray = [];
-            $.each(result, function (i, obj) {
-                dataArray.push([obj.proname, obj.stock]);
-
-            });
-            data.addRows(dataArray);
-            var columnChartOptions = {
-                title: "Pie",
-                width: 1000,
-                height: 750,
-                bar: { groupWidth:"20%"},
-            };
-            var columnChart = new
-                google.visualization.PieChart(document
-                    .getElementById('Piechart_div'));
-            columnChart.draw(data, columnChartOptions);
-        }
-    </script>*@
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -158,8 +66,8 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="~/Chart/Index/layout-static.html">Column</a>
-                                <a class="nav-link" href="~/Chart/Pie/layout-sidenav-light.html">Pie</a>
+                                <a class="nav-link" href="~/Chart/Index">Column</a>
+                                <a class="nav-link" href="~/Pie/Index">Pie</a>
                             </nav>
                         </div>
                     </div>

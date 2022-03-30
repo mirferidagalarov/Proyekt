@@ -50,7 +50,7 @@ namespace MvCproyekt.BLL.Services
 
         public async Task Update(EmployeeToUpdateDTO employeeToUpdateDTO)
         {
-            Employee employee = _mapper.Map<Employee>(employeeToUpdateDTO);
+            Employee employee = _mapper.Map<Employee>(employeeToUpdateDTO);      
             await _employeeRepository.Update(employee);
         }
     }

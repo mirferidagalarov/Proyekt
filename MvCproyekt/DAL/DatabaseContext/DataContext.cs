@@ -22,7 +22,9 @@ namespace MvCproyekt.DAL.DatabaseContext
         public DbSet<Salarys> Salariys { get; set; }
         public DbSet<Month> Months { get; set; }
         public DbSet<Years> Years { get; set; }
-       
+        public DbSet<Chart> Charts { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

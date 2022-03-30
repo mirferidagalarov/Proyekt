@@ -31,39 +31,30 @@ namespace MvCproyekt.Controllers
 
             List<Chart> cs = new List<Chart>();
 
+            cs = _dataContext.Employees
+                    .GroupBy(p => p.Department.DepartmentName)                          
+                   .Select(g => new Chart { proname = g.Key.ToString(), count = g.Count()}).ToList();
+          
+
+
+            /*
+            cs = _dataContext.Employees
+             .GroupBy(p => p.Department)
+            .Select(g => new Chart { Department = g.Key, stock = g.Count() }).ToList();
+            */
+
+            /*
             cs = _dataContext.Departments.Select(x => new Chart
             {
                 proname = x.DepartmentName,
                 stock = x.StockAmount
             }).ToList();
-
-
-            return cs;
-        }
-
-        public IActionResult Pie()
-        {
-            return View();
-        }
-        public IActionResult VisualizeProductList1()
-        {
-            return Json(DynamicProList1());
-        }
-
-        public List<Chart> DynamicProList1()
-        {
-
-            List<Chart> cs = new List<Chart>();
-
-            cs = _dataContext.Employees.Select(x => new Chart
-            {
-                proname = x.Sector.SectorName,
-                stock=x.SectorId
-            }).ToList();
-
+            */
 
             return cs;
         }
+
+        
 
     }
 

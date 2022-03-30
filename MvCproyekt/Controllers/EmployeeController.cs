@@ -18,7 +18,7 @@ namespace MvCproyekt.Controllers
         private readonly ISectorService _sectorService;
         private readonly IPositionService _positionService;
         private readonly IWebHostEnvironment _env;
-        private readonly DataContext _dataContext;
+   
 
         public EmployeeController(IEmployeeService employeeService, IDepartmentService departmentService, ISectorService sectorService, IPositionService positionService, IWebHostEnvironment webHostEnvironment, DataContext dataContext)
         {
@@ -27,7 +27,7 @@ namespace MvCproyekt.Controllers
             _sectorService = sectorService;
             _positionService = positionService;
             _env = webHostEnvironment;
-            _dataContext = dataContext;
+     
            
         }
         public async Task<IActionResult> Index()
@@ -88,6 +88,7 @@ namespace MvCproyekt.Controllers
             employee.Departments = departmentToListDTOs;
             employee.Sectors = sectorToListDTOs;
             employee.Positions = positionToListDTOs;
+      
             
             return View(employee);
         }
@@ -105,6 +106,7 @@ namespace MvCproyekt.Controllers
                 employee.Positions = positionToListDTOs;
                 return View("UpdateEmployee", employee);
             }
+           
             await _employeeService.Update(employeeToUpdateDTO);
             return RedirectToAction("Index");
         }

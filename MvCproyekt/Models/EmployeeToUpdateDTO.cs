@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace MvCproyekt.Models
         public string EmployeeName { get; set; }
         [Required(ErrorMessage = "Enter EmployeeSurname")]
         public string EmployeeSurname { get; set; }
+  
         [Required(ErrorMessage = "Enter Salary")]
         public double Salary { get; set; }
         public DateTime DateofBirth { get; set; }

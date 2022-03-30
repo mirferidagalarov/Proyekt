@@ -11,6 +11,6 @@ namespace MvCproyekt.Entities
         [Key]
         public int Id { get; set; }
         public string proname { get; set; }
-        public int stock { get; set; }
+        public int count { get; set; }
     }
 }
